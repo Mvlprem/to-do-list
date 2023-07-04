@@ -18,6 +18,8 @@ const task = () => {
   };
 
   const displayTasks = (projectName) => {
+    if (projectObj === null) projectObj = { Inbox: { taskList: [] } };
+
     if (!(projectName in projectObj)) return;
     projectObj[projectName].taskList.forEach((obj) => {
       const taskElement = createTask(obj.task, obj.dueDate);
