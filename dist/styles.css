@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "Vercetti";
+  src: url(./font/Vercetti.ttf);
+}
+:root {
+  --color-green: rgba(158, 252, 198, 255);
+  --color-orange: rgba(255, 166, 116, 255);
+  --color-dark-gray: rgba(204, 204, 204, 255);
+  --color-light-gray: rgba(221, 221, 221, 255);
+  --color-primary-black: rgba(51, 51, 51, 255);
+  --color-primary-white: rgba(238, 238, 238, 255);
+}
+
+/* Global Styles */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  font-family: "Vercetti", system-ui;
+}
+button {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+}
+.selected,
+button:hover {
+  border-radius: 0.3rem;
+  background-color: var(--color-dark-gray);
+}
+
+/* Header and Footer Styles */
+header {
+  display: flex;
+  gap: 0.5rem;
+}
+header .menu {
+  display: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+footer {
+  font-weight: bold;
+  text-align: center;
+}
+header,
+footer {
+  padding: 1rem;
+  color: var(--color-primary-white);
+  background-color: var(--color-primary-black);
+}
+
+/* Main Styles */
+main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+/* Navigation Styles */
+nav {
+  height: 100%;
+  background-color: var(--color-light-gray);
+}
+nav > div {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+nav .icon-size {
+  font-size: 1.1rem;
+}
+nav .btn-remove {
+  margin-left: auto;
+}
+
+/* Tasks Section Styles */
+section {
+  height: 100%;
+  background-color: var(--color-primary-white);
+}
+section > div {
+  display: grid;
+  gap: 0.5rem;
+  padding: 2rem 6rem;
+}
+
+/* Popup Styles */
+.popup {
+  display: grid;
+  gap: 0.5rem;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+.popup > input {
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  grid-column: 1/3;
+  border-radius: 0.3rem;
+  border: 2px solid var(--color-dark-gray);
+}
+.popup > button {
+  display: block;
+  border-radius: 0.3rem;
+}
+.btn-add,
+.btn-add:hover {
+  background-color: var(--color-green);
+}
+.btn-cancel,
+.btn-cancel:hover {
+  background-color: var(--color-orange);
+}
+
+/*  Task Styles */
+.task {
+  display: flex;
+  column-gap: 1rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  align-items: center;
+}
+.task:hover {
+  border-radius: 0.3rem;
+  background-color: var(--color-dark-gray);
+}
+.task > span {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.task > p > span {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0.1rem;
+  border: 0.1rem solid var(--color-primary-black);
+  background-color: var(--color-light-gray);
+}
+input[type="date"] {
+  cursor: pointer;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 4px;
+  margin-left: auto;
+  background-color: var(--color-primary-white);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  header .menu {
+    display: block;
+  }
+  main {
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+    background-color: var(--color-primary-white);
+  }
+  nav {
+    display: none;
+  }
+  section > div {
+    padding: 1.5rem;
+  }
+  .task {
+    display: grid;
+    grid-template: auto auto / auto 1fr auto;
+  }
+  input[type="checkbox"] {
+    grid-row: 1/2;
+  }
+  .task > p {
+    grid-column: -3/-1;
+  }
+  input[type="date"] {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .task > span {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+}

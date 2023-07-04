@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer="defer" src="main.js"></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <header>
+      <span class="material-icons" style="font-size: 2.5rem"> done_all </span>
+      <h1>Todo List</h1>
+      <span class="material-icons menu" style="font-size: 2.5rem"> menu </span>
+    </header>
+
+    <main>
+      <nav>
+        <div class="default-project-list">
+          <button class="default-project project">
+            <span class="material-icons icon-size"> move_to_inbox </span>
+            <span>Inbox</span>
+          </button>
+          <button class="project">
+            <span class="material-icons icon-size"> today </span>
+            <span>Today</span>
+          </button>
+          <button class="project">
+            <span class="material-icons icon-size"> date_range </span>
+            <span>This Week</span>
+          </button>
+        </div>
+
+        <h3 style="margin-left: 2rem">Projects</h3>
+
+        <div class="user-project-list">
+          <button class="new-project">
+            <span class="material-icons icon-size"> add </span>
+            Add Project
+          </button>
+        </div>
+      </nav>
+
+      <section>
+        <div class="task-list">
+          <h2 id="project-name"></h2>
+          <button class="new-task">
+            <span class="material-icons icon-size"> add </span>
+            Add Task
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright © 2023 Mvlprem</p>
+    </footer>
+  </body>
+</html>
